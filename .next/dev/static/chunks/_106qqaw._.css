@@ -1,0 +1,144 @@
+/* [project]/components/Header/Header.module.css [app-client] (css) */
+.Header-module__arFiJq__header {
+  z-index: 10;
+  color: #fff;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: #0f172af5;
+  border-bottom: 1px solid #ffffff1a;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 18px max(24px, 50% - 560px);
+  display: flex;
+  position: sticky;
+  top: 0;
+}
+
+.Header-module__arFiJq__wrap {
+  letter-spacing: -.02em;
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 800;
+}
+
+.Header-module__arFiJq__wrap a, .Header-module__arFiJq__navigation a {
+  color: inherit;
+}
+
+.Header-module__arFiJq__navigation {
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.Header-module__arFiJq__navigation a {
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color .16s, background-color .16s;
+}
+
+.Header-module__arFiJq__navigation a:hover {
+  color: #bfdbfe;
+  background: #ffffff14;
+}
+
+@media (max-width: 600px) {
+  .Header-module__arFiJq__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px 20px;
+  }
+
+  .Header-module__arFiJq__navigation a {
+    padding-left: 0;
+  }
+}
+
+/* [project]/components/Footer/Footer.module.css [app-client] (css) */
+.Footer-module__rnk_JG__footer {
+  color: #cbd5e1;
+  background: #0f172a;
+  border-top: 1px solid #1e293b;
+  padding: 24px max(24px, 50% - 560px);
+  font-size: 14px;
+}
+
+.Footer-module__rnk_JG__wrap {
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 28px;
+  display: flex;
+}
+
+.Footer-module__rnk_JG__wrap p {
+  margin: 0;
+}
+
+.Footer-module__rnk_JG__footer a {
+  color: #93c5fd;
+  font-weight: 700;
+}
+
+.Footer-module__rnk_JG__footer a:hover {
+  color: #dbeafe;
+  text-underline-offset: 3px;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .Footer-module__rnk_JG__wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+/* [project]/app/globals.css [app-client] (css) */
+:root {
+  --background: #f4f7fb;
+  --foreground: #172033;
+  --surface: #fff;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --muted: #64748b;
+  --border: #dbe4f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=_106qqaw._.css.map*/

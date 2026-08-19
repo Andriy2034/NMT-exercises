@@ -1,26 +1,40 @@
-/* components/Footer.module.css */
-
 .footer {
-  padding: 20px;
-  background-color: #f0f0f0;
-  text-align: center;
+  padding: 24px max(24px, calc((100% - 1120px) / 2));
+  color: #cbd5e1;
+  background: #0f172a;
+  border-top: 1px solid #1e293b;
   font-size: 14px;
-  color: #555;
-  border-top: 1px solid #ddd;
 }
 
 .wrap {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  text-align: center;
+}
+
+.wrap p {
+  margin: 0;
 }
 
 .footer a {
-  color: #226ec5;
-  font-weight: 600;
-  text-decoration: none;
+  color: #93c5fd;
+  font-weight: 700;
 }
 
 .footer a:hover {
+  color: #dbeafe;
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
+
+@media (max-width: 600px) {
+  .wrap {
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
