@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/globals.css"],"sourcesContent":[":root {\n  --background: #f4f7fb;\n  --foreground: #172033;\n  --surface: #ffffff;\n  --primary: #2563eb;\n  --primary-dark: #1d4ed8;\n  --muted: #64748b;\n  --border: #dbe4f0;\n}\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nhtml,\nbody {\n  min-height: 100%;\n}\n\nbody {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n  color: var(--foreground);\n  background: var(--background);\n  font-family: Arial, Helvetica, sans-serif;\n  -webkit-font-smoothing: antialiased;\n}\n\nmain {\n  flex: 1;\n}\n\na {\n  color: inherit;\n  text-decoration: none;\n}"],"names":[],"mappings":"AAAA;;;;;;;;;;AAUA;;;;;;AAMA;;;;AAKA;;;;;;;;;;AAUA;;;;AAIA"}}]
-}

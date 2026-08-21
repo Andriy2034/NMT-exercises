@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header className={css.header}>
       <div className={css.wrap}>
-        <p>Національний математичний тест</p>
+        <p> Підготовка до національного математичного тесту</p>
       </div>
 
       <nav aria-label="Головна навігація">

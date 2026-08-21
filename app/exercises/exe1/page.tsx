@@ -1,9 +1,100 @@
+"use client";
 
+import {
+  type SyntheticEvent,
+  useState,
+} from "react";
+import css from "../exercises.module.css"
 
-export default function Exe1() {
+function getRandomNumber(max: number) {
+  return Math.floor(Math.random() * max) + 1;
+}
+
+function generateExercise() {
+  const firstNumber = getRandomNumber(9);
+  const secondNumber = getRandomNumber(10 - firstNumber);
+
+  return {
+    firstNumber,
+    secondNumber,
+  };
+}
+
+export default function AdditionExercise() {
+  const [exercise, setExercise] = useState({
+    firstNumber: 1,
+    secondNumber: 1,
+  });
+
+  const [answer, setAnswer] = useState("");
+  const [message, setMessage] = useState("");
+
+  function createNewExercise() {
+    setExercise(generateExercise());
+    setAnswer("");
+  }
+
+  function checkAnswer(event: SyntheticEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const correctAnswer =
+      exercise.firstNumber + exercise.secondNumber;
+
+    if (Number(answer) === correctAnswer) {
+      setMessage("Правильно! 🎉");
+      createNewExercise();
+    } else {
+      setMessage("Неправильно. Спробуй ще раз 🤓");
+    }
+  }
+
   return (
-      <div >
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, placeat iste perspiciatis saepe temporibus eius neque ab quas deleniti distinctio dolore repellat fuga. Saepe, ipsum minima. Aperiam beatae corporis, vel et, aliquam a saepe facilis neque quaerat aspernatur deleniti eius commodi laborum harum non expedita cupiditate vitae id provident quo! Aliquam velit saepe assumenda autem, laboriosam cupiditate architecto vero animi. Labore et laborum consequuntur obcaecati necessitatibus voluptatibus! Consequatur velit excepturi aspernatur quis pariatur quae necessitatibus cum odit minima sint quos, obcaecati et expedita non ut iure quaerat? Deleniti amet culpa, quo officia inventore fugiat ad vero! At molestiae eum expedita excepturi! Perspiciatis, provident! Ut saepe sed vel labore praesentium molestiae, quidem accusamus consectetur ipsum illum nihil molestias non? Libero rem quo magnam voluptatem, reiciendis debitis cumque quisquam! Deleniti nesciunt perspiciatis quasi nam eveniet. Ducimus nisi voluptas quo non veniam ipsum enim assumenda delectus eveniet ut necessitatibus accusantium doloremque animi, cupiditate, reiciendis, et dicta magni iste vero ipsa aut laudantium voluptate. Eveniet quidem itaque incidunt voluptate aliquid voluptatum repellendus expedita rem nobis, nesciunt nemo voluptas reiciendis recusandae id enim harum, alias nihil dolorum sunt accusamus eius magni veniam vel distinctio! Repudiandae, quae optio quia blanditiis alias, ad est dicta ipsum explicabo saepe aperiam sunt rem, modi provident beatae placeat velit possimus eum illo ipsam. Assumenda, sequi perspiciatis. Dolore neque impedit dolor a quibusdam, maiores cupiditate non quam necessitatibus eos fugiat molestiae dolorem quas molestias voluptatibus atque velit alias voluptas, eum sit ex, quo iure nam maxime? Magni, repellendus quas perspiciatis sequi dolor blanditiis. Dolores eos nostrum doloremque expedita dolorem animi ea corrupti soluta dolor error maxime modi enim magni numquam maiores officia, unde blanditiis asperiores quas accusamus, debitis, inventore illum ab quidem! Nostrum iure repellendus eveniet itaque amet cupiditate ex impedit aperiam, deleniti expedita similique reprehenderit recusandae nulla magni quisquam ab quasi adipisci magnam totam perspiciatis porro laborum ipsam! Doloremque iure similique deleniti sint aliquam dicta fuga a illo, deserunt totam quam obcaecati voluptatum eveniet illum corporis distinctio sed. Dicta recusandae perferendis sunt esse quidem est voluptate illo non aspernatur labore tempore dolore aliquid aperiam, ipsam quam cupiditate exercitationem, nesciunt laboriosam, velit consequuntur fugit nulla aut unde quaerat! Ullam est eum cumque saepe dolore molestiae, atque corporis maxime? A earum non, rem magni consequuntur delectus obcaecati harum reprehenderit id quis exercitationem ipsa labore eaque excepturi assumenda illum doloremque sit qui facere necessitatibus inventore aut! Magnam neque, itaque autem dolor rerum ipsum assumenda laboriosam sapiente porro facilis incidunt quod a et pariatur enim odit reprehenderit totam ullam inventore hic voluptatum sint iste nulla voluptas? Dolorum nesciunt omnis similique, eum quia laudantium error ipsa totam odio maxime est exercitationem ex sint fuga quidem rerum, aut quos. Illum eum atque mollitia in facere repellat fugiat, velit inventore, minima corrupti consequatur error earum numquam sit voluptatibus omnis, debitis nobis. Est, adipisci cumque alias iure, officia aliquid provident optio, doloribus consequuntur tempora veritatis blanditiis natus odit error praesentium. Tempore minima necessitatibus ut, culpa assumenda provident amet ipsam nobis quo ratione commodi vero alias distinctio temporibus maiores.
+  <main className={css.main}>
+    <h1 className={css.title}>
+      Додавання двух натуральних чисел до 10
+    </h1>
+
+    <p className={css.description}>
+      Обчисли суму та введи правильну відповідь.
+    </p>
+
+    <form className={css.exerciseForm} onSubmit={checkAnswer}>
+      <div className={css.example}>
+        <span>{exercise.firstNumber}</span>
+        <span className={css.operator}>+</span>
+        <span>{exercise.secondNumber}</span>
+        <span className={css.operator}>=</span>
+
+        <input
+          className={css.answerInput}
+          type="number"
+          min="0"
+          max="10"
+          value={answer}
+          onChange={(event) => {
+            setAnswer(event.target.value);
+            setMessage("");
+          }}
+          aria-label="Введіть результат"
+          required
+          autoFocus
+        />
       </div>
-  );
+
+      <button className={css.button} type="submit">
+        Перевірити
+      </button>
+
+      <p
+        className={`${css.message} ${
+          message.startsWith("Правильно")
+            ? css.correct
+            : css.incorrect
+        }`}
+      >
+        {message}
+      </p>
+    </form>
+  </main>
+);
 }

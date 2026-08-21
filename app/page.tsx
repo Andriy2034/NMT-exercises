@@ -1,5 +1,6 @@
 import Link from "next/link";
 import css from "./page.module.css";
+import Image from "next/image";
 
 const exercises = [
   {
@@ -64,14 +65,28 @@ const exercises = [
   },
 ];
 
+const imageNmt = "/nmt.jpg";
+
 export default function Home() {
   return (
     <main className={css.main}>
-      <h1 className={css.title}>
-        Обери вправу для тренування математичних навичків
-      </h1>
+      <section className={css.hero}>
+        <div className={css.heroContent}>
+          <h1 className={css.title}>
+            Обери вправу для тренування математичних навичок
+          </h1>
 
-      <p className={css.subtitle}>Тільки практика закріплює знання.</p>
+          <p className={css.subtitle}>@Тільки практика закріплює знання</p>
+        </div>
+        <Image
+          src={imageNmt}
+          width={350}
+          height={120}
+          alt="Національний математичний тест"
+          className={css.image}
+          priority
+        />
+      </section>
 
       <ul className={css.exerciseList}>
         {exercises.map((exercise) => (

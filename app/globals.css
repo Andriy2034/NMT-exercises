@@ -14,12 +14,8 @@
   padding: 0;
 }
 
-html,
 body {
   min-height: 100%;
-}
-
-body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -27,6 +23,23 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+
+  min-height: 100vh;
+  color: var(--foreground);
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("/matematika.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
