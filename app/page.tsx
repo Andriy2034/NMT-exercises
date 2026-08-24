@@ -51,18 +51,7 @@ const exercises = [
     title: "Додавання і віднімання двох натуральних чисел до 100",
     href: "/exercises/exe12",
   },
-  {
-    title: "Додавання у стовбчик двозначних чисел",
-    href: "/exercises/exe13",
-  },
-  {
-    title: "Додавання у стовбчик двозначних та тризначних чисел",
-    href: "/exercises/exe14",
-  },
-  {
-    title: "Додавання у стовбчик тризначних чисел",
-    href: "/exercises/exe15",
-  },
+  
 ];
 
 const imageNmt = "/nmt.jpg";
